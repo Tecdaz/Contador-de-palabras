@@ -5,10 +5,10 @@ def normalize(text):
 
     words = [word.lower() for word in text.split()]
 
-    for word in words:
+    for index, word in enumerate(words):
         for mark in punctuation_marks:
-            word.replace(mark, "")
-
+            word = word.replace(mark, "")
+        words[index] = word
     return words
 
 def run():
